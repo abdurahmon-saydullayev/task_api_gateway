@@ -1,0 +1,45 @@
+syntax="proto3";
+
+package blogpost_service;
+option go_package="genproto/blogpost_service";
+import "author.proto";
+
+
+message Book {
+    string id = 1;
+    string name = 2;
+    float price = 3;
+    string author_id = 4;
+    string created_at = 5;
+    string updated_at = 6;
+    Author author = 7;
+}
+
+message CreateBook {
+    string name = 1;
+    string price = 2;
+    string author_id = 3;
+}
+
+message BookPK {
+    string id = 1;
+}
+
+message UpdateBookResponse {
+    string id = 1;
+    string name = 2;
+    string price = 3;
+    string author_id = 4;
+}
+
+message GetBookListRequest {
+    int32 limit = 1;
+    int32 offset = 2;
+    string search = 3;
+    string type = 4;
+}
+
+message GetBookListResponse {
+    int32 count = 1;
+    repeated Book books = 2;
+}
