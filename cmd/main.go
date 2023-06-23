@@ -21,6 +21,8 @@ func main() {
 		panic(err)
 	}
 
+	fmt.Println("")
+
 	var loggerLevel = new(string)
 
 	*loggerLevel = logger.LevelDebug
